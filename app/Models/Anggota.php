@@ -10,7 +10,7 @@ class Anggota extends Model
     use HasFactory;
 
     // Nama tabel eksplisit
-    protected $table = 'tbanggota';
+    protected $table = 'anggotas';
 
     // Nama primary key
     protected $primaryKey = 'idanggota';

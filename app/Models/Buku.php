@@ -10,7 +10,7 @@ class Buku extends Model
     use HasFactory;
 
     // Tambahkan ini agar tidak pakai nama tabel default "bukus"
-    protected $table = 'tbbuku';
+    protected $table = 'bukus';
     protected $primaryKey = 'idbuku';
 
     // Jika primary key bukan auto-increment integer

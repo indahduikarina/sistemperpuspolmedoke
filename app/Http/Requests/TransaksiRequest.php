@@ -14,7 +14,7 @@ class TransaksiRequest extends FormRequest
     public function rules()
     {
         return [
-            'idanggota' => 'required|exists:tbanggota,idanggota',
+            'idanggota' => 'required|exists:anggotas,idanggota',
             'idbuku' => 'required|exists:tbbuku,idbuku',
             'tglpinjam' => 'required|date',
             'tglkembali' => 'required|date|after_or_equal:tglpinjam',
