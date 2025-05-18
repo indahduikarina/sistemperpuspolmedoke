@@ -14,10 +14,11 @@ return new class extends Migration
     Schema::create('bukus', function (Blueprint $table) {
         $table->id();
         $table->string('idbuku')->unique();
-        $table->string('judul');
+        $table->string('judulbuku');
         $table->string('kategori');
         $table->string('pengarang');
         $table->string('penerbit');
+        $table->string('status');
         $table->timestamps();
     });
 

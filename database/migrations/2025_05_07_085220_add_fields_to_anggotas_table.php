@@ -7,23 +7,26 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Menjalankan migrasi.
      */
     public function up(): void
     {
         Schema::table('anggotas', function (Blueprint $table) {
-            $table->string('id_anggota')->unique()->after('id');
-        $table->enum('jenis_kelamin', ['Pria', 'Wanita'])->after('nama');
+            $table->string('idanggota')->unique()->after('id');
+            $table->enum('jeniskelamin', ['Pria', 'Wanita'])->after('nama');
+            $table->text('alamat')->nullable()->after('jenis_kelamin');
+            $table->enum('status', ['Aktif', 'Tidak Aktif'])->default('Aktif')->after('alamat');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Membalikkan migrasi.
      */
     public function down(): void
     {
         Schema::table('anggotas', function (Blueprint $table) {
-            //
+            $table->dropColumn(['id_anggota', 'jenis_kelamin', 'alamat', 'status']);
         });
     }
 };
+
