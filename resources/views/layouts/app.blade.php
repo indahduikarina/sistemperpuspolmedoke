@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - Perpustakaan Umum POLMED</title>
-    @vite('resources/css/app.css')
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
