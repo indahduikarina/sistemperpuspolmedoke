@@ -16,7 +16,7 @@
     @endif
 
     <div class="overflow-x-auto bg-white rounded shadow">
-        <table class="min-w-full text-sm text-left rounded-lg">
+        <table class="min-w-full text-sm text-left">
             <thead class="bg-gray-100 text-gray-700 uppercase">
                 <tr>
                     <th class="py-3 px-4 text-center bg-purple-400 text-white">No</th>

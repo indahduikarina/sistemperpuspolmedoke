@@ -32,7 +32,7 @@
                 @forelse ($transaksis as $index => $transaksi)
                 <tr class="border-t hover:bg-gray-50">
                     <td class="py-2 px-4">{{ $index + 1 }}</td>
-                    <td class="py-2 px-4">{{ $transaksi->idtransaksi }}</td>
+                    <td class="py-2 px-4">{{ $transaksi->id }}</td>
                     <td class="py-2 px-4">{{ $transaksi->anggota->nama }}</td>
                     <td class="py-2 px-4">{{ $transaksi->buku->judulbuku }}</td>
                     <td class="py-2 px-4">{{ $transaksi->tglpinjam }}</td>
