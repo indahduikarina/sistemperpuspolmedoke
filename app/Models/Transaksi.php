@@ -13,7 +13,7 @@ class Transaksi extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'id',
+        'idtransaksi',
         'idanggota',
         'idbuku',
         'tglpinjam',
