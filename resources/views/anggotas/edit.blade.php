@@ -123,8 +123,8 @@
             </label>
             <select name="status" id="status" class="form-control" required>
                 <option value="">-- Pilih Status --</option>
-                <option value="Meminjam" {{ old('status', $anggota->status) == 'Meminjam' ? 'selected' : '' }}>Meminjam</option>
-                <option value="Tidak Meminjam" {{ old('status', $anggota->status) == 'Tidak Meminjam' ? 'selected' : '' }}>Tidak Meminjam</option>
+                <option value="Aktif" {{ old('status', $anggota->status) == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                <option value="Tidak Aktif" {{ old('status', $anggota->status) == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
             </select>
         </div>
 
