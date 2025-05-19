@@ -12,7 +12,8 @@
         <!-- Sidebar -->
         <aside class="w-64 bg-gray-200 flex flex-col">
             <div class="p-4 bg-purple-400">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-[150px] mx-auto">
+                <img src="https://res.cloudinary.com/dxdels8o4/image/upload/v1747638241/logo-polmed-png_hst1j0.png" alt="Logo" class="w-[150px] mx-auto">
+
             </div>
             <div class="bg-purple-300 text-white p-2 font-bold font-xl text-center">
                 <h1>Hai Admin !</h1>
