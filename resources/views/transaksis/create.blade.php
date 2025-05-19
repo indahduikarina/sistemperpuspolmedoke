@@ -8,6 +8,11 @@
         @csrf
 
         <div class="mb-4">
+                <label for="idbuku" class="block text-gray-700 mb-1">ID Buku</label>
+                <input type="text" name="idbuku" id="idbuku" class="w-full border-gray-300 rounded p-2" required>
+        </div>
+
+        <div class="mb-4">
             <label for="idanggota" class="block text-gray-700 font-semibold">Anggota</label>
             <select name="idanggota" id="idanggota" class="w-full border rounded px-3 py-2">
                 <option value="">-- Pilih Anggota --</option>

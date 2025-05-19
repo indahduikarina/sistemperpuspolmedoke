@@ -12,16 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaksis', function (Blueprint $table) {
-    $table->string('id')->primary();
-    $table->string('idanggota');
-    $table->string('idbuku');
-    $table->date('tglpinjam');
-    $table->date('tglkembali')->nullable();
-    $table->timestamps();
+            $table->string('id')->primary();
+            $table->string('idanggota');
+            $table->string('idbuku');
+            $table->date('tglpinjam');
+            $table->date('tglkembali')->nullable();
+            $table->timestamps();
 
-    $table->foreign('idanggota')->references('id')->on('anggotas')->onDelete('cascade');
-    $table->foreign('idbuku')->references('id')->on('bukus')->onDelete('cascade');
-});
+            $table->foreign('idanggota')->references('id')->on('anggotas')->onDelete('cascade');
+            $table->foreign('idbuku')->references('id')->on('bukus')->onDelete('cascade');
+                });
+
     }
 
     /**
