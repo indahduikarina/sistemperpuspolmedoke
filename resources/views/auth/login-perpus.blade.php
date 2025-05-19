@@ -1,61 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Login Perpustakaan</title>
-    @vite('resources/css/app.css')
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Perpustakaan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="w-full max-w-sm p-6 bg-white rounded-xl shadow-md">
-        <h2 class="text-2xl font-bold text-center mb-6">Login Perpustakaan</h2>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center px-4">
 
-        @if ($errors->any())
-            <div class="mb-4 text-red-600 text-sm">
-                <ul class="list-disc pl-5">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+    <div class="max-w-md w-full bg-white p-8 rounded-xl shadow-md animate-fade-in">
+        <div class="mb-6 text-center">
+            <div class="text-4xl font-extrabold text-indigo-600 mb-2">📚</div>
+            <h2 class="text-2xl font-semibold text-gray-700">Login ke Perpustakaan</h2>
+            <p class="text-sm text-gray-500">Masukkan email dan password Anda untuk masuk</p>
+        </div>
+
+        @if (session('error'))
+            <div class="mb-4 text-sm text-red-600">
+                {{ session('error') }}
             </div>
         @endif
 
-        <form method="POST" action="{{ route('login.perpus') }}">
+        <form method="POST" action="{{ route('login') }}" class="space-y-5">
             @csrf
 
-            <div class="mb-4">
-                <label class="block mb-1 font-medium">Email:</label>
-                <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                        <!-- Heroicons mail icon -->
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4 4-4-4m8-4l-4-4-4 4" />
-                        </svg>
-                    </span>
-                    <input type="email" name="email" class="pl-10 w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300" required autofocus>
-                </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
-            <div class="mb-6">
-                <label class="block mb-1 font-medium">Password:</label>
-                <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                        <!-- Heroicons lock icon -->
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.1 0 2 .9 2 2v4H10v-4c0-1.1.9-2 2-2zM6 11V9a6 6 0 1112 0v2" />
-                        </svg>
-                    </span>
-                    <input type="password" name="password" class="pl-10 w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300" required>
-                </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+                <input id="password" type="password" name="password" required
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
-            <div class="flex justify-between items-center mb-4">
-                <a href="{{ route('password.request') }}" class="text-sm text-blue-600 hover:underline">Lupa password?</a>
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center">
+                    <input type="checkbox" name="remember" class="form-checkbox text-indigo-600">
+                    <span class="ml-2 text-gray-600">Ingat saya</span>
+                </label>
+                @if (Route::has('password.request'))
+                <a href="{{ route('password.request') }}" class="text-indigo-600 hover:underline">
+                    Lupa password?
+                </a>
+                @endif
             </div>
 
-            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md">
-                Login
-            </button>
+            <div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                    Masuk
+                </button>
+            </div>
         </form>
+
+        <p class="mt-6 text-center text-sm text-gray-600">
+            Belum punya akun?
+            <a href="{{ route('register') }}" class="text-indigo-600 hover:underline">Daftar di sini</a>
+        </p>
     </div>
+
 </body>
 </html>
