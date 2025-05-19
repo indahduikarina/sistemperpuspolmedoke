@@ -8,8 +8,8 @@
         @csrf
 
         <div class="mb-4">
-                <label for="idbuku" class="block text-gray-700 mb-1">ID Buku</label>
-                <input type="text" name="idbuku" id="idbuku" class="w-full border-gray-300 rounded p-2" required>
+                <label for="idbuku" class="block text-gray-700 mb-1">ID Transaksi</label>
+                <input type="text" name="idtransaksi" id="trnasaksi" class="w-full border-gray-300 rounded p-2" required>
         </div>
 
         <div class="mb-4">
