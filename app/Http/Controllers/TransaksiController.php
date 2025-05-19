@@ -25,12 +25,12 @@ class TransaksiController extends Controller
     public function store(TransaksiRequest $request)
     {
         // Generate ID Transaksi otomatis
-        $last = Transaksi::orderBy('idtransaksi', 'desc')->first();
-        $lastId = $last ? intval(substr($last->idtransaksi, 2)) : 0;
+        $last = Transaksi::orderBy('id', 'desc')->first();
+        $lastId = $last ? intval(substr($last->id, 2)) : 0;
         $newId = 'TR' . str_pad($lastId + 1, 3, '0', STR_PAD_LEFT);
 
         Transaksi::create([
-            'idtransaksi' => $newId,
+            'id' => $newId,
             'idanggota' => $request->idanggota,
             'idbuku' => $request->idbuku,
             'tglpinjam' => $request->tglpinjam,

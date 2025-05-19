@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     protected $table = 'transaksis';
-    protected $primaryKey = 'idtransaksi';
+    protected $primaryKey = 'idt';
     public $incrementing = false;
     public $timestamps = false; // <- tambahkan ini
 
     protected $fillable = [
-        'idtransaksi',
+        'id',
         'idanggota',
         'idbuku',
         'tglpinjam',
