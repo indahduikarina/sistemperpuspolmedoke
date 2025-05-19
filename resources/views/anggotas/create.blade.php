@@ -19,13 +19,11 @@
             </div>
 
             <div class="mb-4">
-                <label for="jenis_kelamin" class="block text-gray-700 mb-1">Jenis Kelamin</label>
-                <select name="jenis_kelamin" id="jenis_kelamin" class="w-full border-gray-300 rounded p-2" required>
-                    <option value="">-- Pilih --</option>
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
-                </select>
-            </div>
+                 <label for="jenis_kelamin" class="block text-gray-700 mb-1">Jenis Kelamin</label>
+                 <select name="jenis_kelamin" id="jenis_kelamin" class="w-full border-gray-300 rounded p-2" required><option value="">-- Pilih --</option>
+                 <option value="Pria">Pria</option>
+                 <option value="Wanita">Wanita</option> </select>
+                    </div>
 
             <div class="mb-4">
                 <label for="alamat" class="block text-gray-700 mb-1">Alamat</label>

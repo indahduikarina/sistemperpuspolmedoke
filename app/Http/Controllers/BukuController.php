@@ -21,7 +21,7 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'idbuku' => 'required|unique:tbbuku,idbuku',
+            'idbuku' => 'required|unique:bukus,idbuku',
             'judulbuku' => 'required',
             'kategori' => 'required',
             'pengarang' => 'required',
