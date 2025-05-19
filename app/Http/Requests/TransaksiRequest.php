@@ -15,7 +15,7 @@ class TransaksiRequest extends FormRequest
     {
         return [
             'idanggota' => 'required|exists:anggotas,idanggota',
-            'idbuku' => 'required|exists:tbbuku,idbuku',
+            'idbuku' => 'required|exists:bukus,idbuku',
             'tglpinjam' => 'required|date',
             'tglkembali' => 'required|date|after_or_equal:tglpinjam',
         ];
