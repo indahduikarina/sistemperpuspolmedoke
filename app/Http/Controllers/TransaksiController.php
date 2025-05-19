@@ -30,7 +30,7 @@ class TransaksiController extends Controller
         $newId = 'TR' . str_pad($lastId + 1, 3, '0', STR_PAD_LEFT);
 
         Transaksi::create([
-            'id' => $newId,
+             'id' => $request->id_transaksi,
             'idanggota' => $request->idanggota,
             'idbuku' => $request->idbuku,
             'tglpinjam' => $request->tglpinjam,
