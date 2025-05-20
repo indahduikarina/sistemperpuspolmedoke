@@ -36,7 +36,7 @@
             <tr>
                 <td>{{ $no + 1 }}</td>
                 <td>{{ $b->idbuku }}</td>
-                <td>{{ $b->judul }}</td>
+                <td>{{ $b->judulbuku }}</td>
                 <td>{{ $b->kategori }}</td>
                 <td>{{ $b->pengarang }}</td>
                 <td>{{ $b->penerbit }}</td>
