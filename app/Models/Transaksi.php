@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     protected $table = 'transaksis';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'idtransaksi';
     public $incrementing = false;
     public $timestamps = false; // <- tambahkan ini
     protected $keyType = 'string';
