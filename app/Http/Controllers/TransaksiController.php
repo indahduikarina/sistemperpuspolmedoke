@@ -27,12 +27,12 @@ class TransaksiController extends Controller
         // Generate ID Transaksi otomatis
 
         Transaksi::create([
-             'idtransaksi' => $request->id_transaksi,
-            'idanggota' => $request->idanggota,
-            'idbuku' => $request->idbuku,
-            'tglpinjam' => $request->tglpinjam,
-            'tglkembali' => $request->tglkembali,
-        ]);
+    'idtransaksi' => $request->idtransaksi,
+    'idanggota' => $request->idanggota,
+    'idbuku' => $request->idbuku,
+    'tglpinjam' => $request->tglpinjam,
+    'tglkembali' => $request->tglkembali,
+]);
 
         return redirect()->route('transaksis.index')->with('success', 'Transaksi berhasil ditambahkan.');
     }

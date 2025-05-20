@@ -4,28 +4,30 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTransaksisTable extends Migration
 {
-    /**
-     * Menjalankan migrasi.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('transaksis', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idanggota')->constrained('anggotas')->onDelete('cascade');
-            $table->foreignId('idbuku')->constrained('bukus')->onDelete('cascade');
+            $table->increments('idtransaksi'); // PRIMARY KEY auto increment (integer)
+            
+            $table->unsignedInteger('idanggota'); // Foreign key
+            $table->unsignedInteger('idbuku');    // Foreign key
+
             $table->date('tglpinjam');
-            $table->date('tglkembali')->nullable();
+            $table->date('tglkembali');
+
             $table->timestamps();
+
+            // Foreign key constraints
+            $table->foreign('idanggota')->references('idanggota')->on('anggotas')->onDelete('cascade');
+            $table->foreign('idbuku')->references('idbuku')->on('bukus')->onDelete('cascade');
         });
     }
 
-    /**
-     * Membalikkan migrasi.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('transaksis');
     }
-};
+}
+

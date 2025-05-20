@@ -9,8 +9,7 @@
 
         <div class="mb-4">
                 <label for="idbuku" class="block text-gray-700 mb-1">ID Transaksi</label>
-                <input type="text" name="idtransaksi" id="trnasaksi" class="w-full border-gray-300 rounded p-2" required>
-        </div>
+                <input type="text" name="idtransaksi" id="idtransaksi" class="w-full border-gray-300 rounded p-2" required>
 
         <div class="mb-4">
             <label for="idanggota" class="block text-gray-700 font-semibold">Anggota</label>

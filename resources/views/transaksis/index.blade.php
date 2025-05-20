@@ -20,7 +20,6 @@
             <thead class="bg-purple-400 text-white uppercase">
                 <tr>
                     <th class="py-3 px-4">No</th>
-                    <th class="py-3 px-4">ID Transaksi</th>
                     <th class="py-3 px-4">Nama Anggota</th>
                     <th class="py-3 px-4">Judul Buku</th>
                     <th class="py-3 px-4">Tanggal Pinjam</th>
@@ -32,8 +31,7 @@
                 @forelse ($transaksis as $index => $transaksi)
                 <tr class="border-t hover:bg-gray-50">
                     <td class="py-2 px-4">{{ $index + 1 }}</td>
-                    <td class="py-2 px-4">{{ $transaksi->id }}</td>
-                    <td class="py-2 px-4">{{ $transaksi->anggota->nama }}</td>
+                   <td class="py-2 px-4">{{ $transaksi->anggota->nama ?? '-' }}</td>
                     <td class="py-2 px-4">{{ $transaksi->buku->judulbuku }}</td>
                     <td class="py-2 px-4">{{ $transaksi->tglpinjam }}</td>
                     <td class="py-2 px-4">{{ $transaksi->tglkembali }}</td>

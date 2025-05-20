@@ -4,29 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateAnggotasTable extends Migration
 {
-    /**
-     * Menjalankan migrasi.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('anggotas', function (Blueprint $table) {
-            $table->id(); // Titik koma ditambahkan
-            $table->string('idanggota')->unique();
-            $table->string('nama'); // Kolom nama ditambahkan karena direferensi di error sebelumnya
-            $table->enum('jeniskelamin', ['Pria', 'Wanita']);
-            $table->text('alamat')->nullable();
-            $table->enum('status', ['Aktif', 'Tidak Aktif'])->default('Aktif');
-            $table->timestamps(); // Ditambahkan untuk created_at dan updated_at
+            $table->increments('idanggota'); // INTEGER AUTO INCREMENT PRIMARY KEY
+            $table->string('nama', 30);
+            $table->string('jeniskelamin', 10);
+            $table->string('alamat', 40);
+            $table->string('status', 20);
+            $table->timestamps(); // created_at & updated_at
         });
     }
 
-    /**
-     * Membalikkan migrasi.
-     */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('anggotas'); // Diubah untuk menghapus seluruh tabel
+        Schema::dropIfExists('anggotas');
     }
-};
+}
+
+?>

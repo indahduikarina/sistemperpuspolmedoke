@@ -4,30 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateBukusTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
-    Schema::create('bukus', function (Blueprint $table) {
-        $table->id();
-        $table->string('idbuku')->unique();
-        $table->string('judulbuku');
-        $table->string('kategori');
-        $table->string('pengarang');
-        $table->string('penerbit');
-        $table->string('status');
-        $table->timestamps();
-    });
-
+        Schema::create('bukus', function (Blueprint $table) {
+            $table->id('idbuku'); // Auto-increment primary key (integer)
+            $table->string('judulbuku', 50);
+            $table->string('kategori', 50);
+            $table->string('pengarang', 40);
+            $table->string('penerbit', 40);
+            $table->string('status', 10);
+            $table->timestamps(); // created_at & updated_at
+        });
     }
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+
+    public function down()
     {
         Schema::dropIfExists('bukus');
     }
-};
+}
+
