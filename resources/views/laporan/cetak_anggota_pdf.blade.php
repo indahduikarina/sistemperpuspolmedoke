@@ -14,7 +14,7 @@
 <body>
 
     <div style="text-align: center;">
-        <img src="{{ public_path('images/logo-polmed.jpg') }}" class="logo">
+
         <h1>Laporan Data Anggota</h1>
         <p>Perpustakaan Umum POLMED</p>
         <p>Tanggal Cetak: {{ $tanggal }}</p>
